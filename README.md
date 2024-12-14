@@ -20,3 +20,5 @@ Curve plot for course grading
 	8.00
 	```
 2. Run `PlotCurve.py`.
+
+3. Plot in pdf is at Downloads directory

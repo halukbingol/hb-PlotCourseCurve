@@ -121,9 +121,6 @@ def plotCurve(course, data):
     print('min:', data_min, 'max:', data_max, 'bin_nof:', bin_nof)
 
     # sigma and mu
-    sig_x = -5
-    sig_y = -1
-    alpha = 0.5
     #
     mu = stat.mean(grades)
     sigma = stat.stdev(grades)
@@ -133,11 +130,24 @@ def plotCurve(course, data):
     sig1p = math.floor(mu + 1 * sigma)
     sig2p = math.floor(mu + 2 * sigma)
     #
-    plt.text(sig2m + sig_x, sig_y, '$\mu-2\sigma=$' + "%2.1f" % (mu - 2 * sigma), color='r', alpha=alpha, size=6)
-    plt.text(sig1m + sig_x, sig_y, '$\mu-\sigma=$' + "%2.1f" % (mu - 1 * sigma), color='r', alpha=alpha, size=6)
-    plt.text(sig0m + sig_x, sig_y, '$\mu=$' + "%2.1f" % (mu - 0 * sigma), color='r', alpha=alpha, size=6)
-    plt.text(sig1p + sig_x, sig_y, '$\mu+\sigma=$' + "%2.1f" % (mu + 1 * sigma), color='r', alpha=alpha, size=6)
-    plt.text(sig2p + sig_x, sig_y, '$\mu+2\sigma=$' + "%2.1f" % (mu + 2 * sigma), color='r', alpha=alpha, size=6)
+    # sig_x = -5
+    # sig_y = -1
+    sig_x = 0
+    sig_y = -1
+    alpha = 0.5
+
+    #
+    # plt.text(sig2m + sig_x, sig_y, '$\mu-2\sigma=$' + "%2.1f" % (mu - 2 * sigma), color='r', alpha=alpha, size=6)
+    # plt.text(sig1m + sig_x, sig_y, '$\mu-\sigma=$' + "%2.1f" % (mu - 1 * sigma), color='r', alpha=alpha, size=6)
+    # plt.text(sig0m + sig_x, sig_y, '$\mu=$' + "%2.1f" % (mu - 0 * sigma), color='r', alpha=alpha, size=6)
+    # plt.text(sig1p + sig_x, sig_y, '$\mu+\sigma=$' + "%2.1f" % (mu + 1 * sigma), color='r', alpha=alpha, size=6)
+    # plt.text(sig2p + sig_x, sig_y, '$\mu+2\sigma=$' + "%2.1f" % (mu + 2 * sigma), color='r', alpha=alpha, size=6)
+    plt.text(sig2m + sig_x, sig_y, '$\mu-2\sigma=$' + "%2.1f" % (mu - 2 * sigma), color='r', alpha=alpha, size=6, rotation=-90,verticalalignment='top')
+    plt.text(sig1m + sig_x, sig_y, '$\mu-\sigma=$' + "%2.1f" % (mu - 1 * sigma), color='r', alpha=alpha, size=6, rotation=-90,verticalalignment='top')
+    plt.text(sig0m + sig_x, sig_y, '$\mu=$' + "%2.1f" % (mu - 0 * sigma), color='r', alpha=alpha, size=6, rotation=-90,verticalalignment='top')
+    plt.text(sig1p + sig_x, sig_y, '$\mu+\sigma=$' + "%2.1f" % (mu + 1 * sigma), color='r', alpha=alpha, size=6, rotation=-90,verticalalignment='top')
+    plt.text(sig2p + sig_x, sig_y, '$\mu+2\sigma=$' + "%2.1f" % (mu + 2 * sigma), color='r', alpha=alpha, size=6, rotation=-90,verticalalignment='top')
+    #
     plt.axvline(x=sig2m, color='r', alpha=alpha)
     plt.axvline(x=sig1m, color='r', alpha=alpha)
     plt.axvline(x=sig0m, color='r', alpha=alpha)
